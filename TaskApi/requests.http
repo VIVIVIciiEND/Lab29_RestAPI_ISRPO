@@ -1,0 +1,55 @@
+###
+@baseUrl = http://localhost:5062
+
+###
+
+GET {{baseUrl}}/api/tasks
+
+###
+GET {{baseUrl}}/api/tasks?completed = true 
+
+###
+
+GET {{baseUrl}}/api/tasks?completed = false 
+
+###
+
+GET {{baseUrl}}/api/tasks/1
+
+###
+
+GET {{baseUrl}}/api/tasks/999
+###
+###
+POST {{baseUrl}}/api/tasks 
+Content-Type: application/json
+
+{
+    "title" : "задача из REST client" , 
+    "description": "создана через файл .http" , 
+    "priority" : "High"
+}
+
+###
+POST {{baseUrl}}/api/tasks 
+Content-Type: application/json
+
+{
+    "title": "", 
+    "description" : "описание без заголовка" , 
+    "priority" : "Normal" 
+}
+###
+PATCH {{baseUrl}}/api/tasks/2/complete
+### 
+PUT {{baseUrl}}/api/tasks/1 
+Content-Type: application/json
+
+{
+    "title" : "изучить asp.net core" , 
+    "description" : "контроллеры маршруты dto" , 
+    "isCompleted" : true , 
+    "priority": "High"
+}
+###
+DELETE {{baseUrl}}/api/tasks/4
